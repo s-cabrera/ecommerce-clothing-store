@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ecommerce-clothing-store/static/css/main.dd41230c.css",
+    "main.js": "/ecommerce-clothing-store/static/js/main.297dca0c.js",
+    "static/js/787.88364d60.chunk.js": "/ecommerce-clothing-store/static/js/787.88364d60.chunk.js",
+    "index.html": "/ecommerce-clothing-store/index.html",
+    "main.dd41230c.css.map": "/ecommerce-clothing-store/static/css/main.dd41230c.css.map",
+    "main.297dca0c.js.map": "/ecommerce-clothing-store/static/js/main.297dca0c.js.map",
+    "787.88364d60.chunk.js.map": "/ecommerce-clothing-store/static/js/787.88364d60.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dd41230c.css",
+    "static/js/main.297dca0c.js"
+  ]
+}
