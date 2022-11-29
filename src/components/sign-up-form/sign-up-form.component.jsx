@@ -1,12 +1,14 @@
 
 import { useState } from 'react';
-import { createAuthUserWithEmailAndPassword, createUserDocFromAuth } from '../../utils/firebase/firebase.utils'
+import { 
+    createAuthUserWithEmailAndPassword, 
+    createUserDocFromAuth } 
+from '../../utils/firebase/firebase.utils'
 
 import FormInput from '../form-input/form-input.component';
-import './sign-up-form.styles.scss'
-
 import Button from '../button/button.component';
 
+import './sign-up-form.styles.scss'
 const defaultFormFields = {
     displayName: "",
     email: "",
@@ -14,7 +16,7 @@ const defaultFormFields = {
     confirmPassword: ""
 }
 
-const SignUpForm = ({ signUp }) => {
+const SignUpForm = () => {
 
     const [formFields, setFormFields] = useState(defaultFormFields);
     const { displayName, email, password, confirmPassword } = formFields;
@@ -96,11 +98,11 @@ const SignUpForm = ({ signUp }) => {
                         required: true,
                         onChange: handleChange,
                         name: "confirmPassword",
-                        value: { confirmPassword }
+                        value: confirmPassword
                     }}
                 />
 
-                <Button buttonType='google '>Sign Up</Button>
+                <Button buttonType='default'>Sign Up</Button>
             </form>
         </div>
     )
