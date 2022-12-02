@@ -1,18 +1,19 @@
+//React
+import { useState, } from 'react';
 
-import { useState } from 'react';
+//Firebase methods
 import { 
-    createUserDocFromAuth,
     signInAuthUserWithEmailAndPassword,
     signInWithGooglePopup, 
     //signInWithGoogleRedirect,
 } from '../../utils/firebase/firebase.utils'
 
+//Components
 import FormInput from '../form-input/form-input.component';
 import Button from '../button/button.component';
 
+//Styling
 import './sign-in-form.styles.scss'
-import { ErrorFactory } from '@firebase/util';
-
 
 const defaultFormFields = {
     email: "",
@@ -24,15 +25,12 @@ const SignInForm = () => {
     const [formFields, setFormFields] = useState(defaultFormFields);
     const { email, password} = formFields;
 
-    // console.log(formFields);
-
-    const resetFormFields = () =>{
+    const resetFormFields = () => {
         setFormFields(defaultFormFields);
     }
 
     const signInWithGoogle = async () => {
-        const {user} = await signInWithGooglePopup();
-        await createUserDocFromAuth(user);
+        await signInWithGooglePopup();
     };
 
     const handleChange = (event) => {
@@ -45,8 +43,8 @@ const SignInForm = () => {
         if (!email || !password) { alert("Missing input field") }
         else {
             try {
-                const response = await signInAuthUserWithEmailAndPassword(email, password);
-                console.log(response);
+                const {user} = await signInAuthUserWithEmailAndPassword(email, password);
+                // setCurrentUser(user);
                 resetFormFields();
             } catch (error) {
                 switch(error.code){
